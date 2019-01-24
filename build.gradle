@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+
+mainClassName = "com.example.wordcount.driver.WDriver"
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.hadoop', name: 'hadoop-client', version: '3.2.0'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "com.example.wordcount.driver.WDriver"
+    }
+}
